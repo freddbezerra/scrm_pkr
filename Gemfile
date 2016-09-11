@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 
 #Minhas Gems
 gem 'bootstrap-sass'
+gem 'bootstrap_form'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.5'

@@ -1,0 +1,12 @@
+<div class="container-customized">
+      <% flash.each do |name,msg| %>
+          <% if name != "notice"%>
+              <div class='alert alert-<%= "#{name}" %> '>
+          <%else%>
+              <div class='alert alert-warning'>
+          <%end%>
+           <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong><%=msg%></strong>
+          </div>
+    <%end%>
+</div>
