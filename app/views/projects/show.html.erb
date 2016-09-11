@@ -1,0 +1,13 @@
+<article class="details-project">
+    <h1 class="project-details-name"> <%= @project.name %>  </h1>
+
+    <div class="glyphicon glyphicon-calendar" id="project-date">
+        <%= @project.created_at.strftime("%b %d, %y") %>
+    </div>
+    
+    <div class="project-description">
+        <%= @project.description %>
+    </div>
+
+</article>
+
