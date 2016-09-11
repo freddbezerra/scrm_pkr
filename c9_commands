@@ -4,3 +4,27 @@ sudo service postgresql start
 github
 freddbezerra/scrm_pkr
 git@github.com:freddbezerra/scrm_pkr.git
+
+4 tables
+
+Project
+    -name
+    -status
+    -number_of_stories
+    -owner_id
+Users
+    -name
+    -email
+    -password
+    -role
+
+User_story
+    -project_id
+    -description
+    -status
+    -turn
+    
+Story_rating
+    -user_story_id
+    -user_id
+    -rating
