@@ -7,6 +7,8 @@ gem 'bootstrap_form'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.5'
+  gem 'guard-rspec', require: false
+  gem 'spring-commands-rspec'
 end
 
 group :test do
