@@ -1,4 +1,4 @@
-<h1> New Project</h1>
+<h1> Editting Project</h1>
 
 <%= bootstrap_form_for(@project) do |f| %>
 
@@ -23,7 +23,7 @@
     </div>  
   <%end%>
 
-  <%= f.text_field :name %>
-  <%= f.text_area :description , label: "Simple description" %>
-  <%= f.submit "Create Project"  , class:"btn btn-primary btn-block"%>
+  <%= f.text_field :name,label: "Name" %>
+  <%= f.text_area :description , label: "Simple Description" %>
+  <%= f.submit "Update Project"  , class:"btn btn-primary btn-block"%>
 <% end %>
