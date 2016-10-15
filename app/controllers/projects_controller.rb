@@ -1,4 +1,7 @@
 class ProjectsController < ApplicationController
+  
+  before_filter :set_project, only:[:show,:edit,:update,:destroy]
+  
   def index
     @projects = Project.all
   end
@@ -6,15 +9,13 @@ class ProjectsController < ApplicationController
     @project = Project.new
   end
   def show 
-    @project= Project.find(params[:id])
   end
   
   def edit
-    @project = Project.find(params[:id])
   end
   
   def update
-    @project = Project.find(params[:id])
+  
     if @project.update(project_params)
         flash[:success] = "Project has been updated"
         redirect_to @project
@@ -24,9 +25,9 @@ class ProjectsController < ApplicationController
     end
         
   end
+  
   def destroy
-    @project = Project.find(params[:id])
-    
+  
     if @project.destroy
       flash[:sucess] = "Project has been deleted"
       redirect_to  projects_path
@@ -37,7 +38,7 @@ class ProjectsController < ApplicationController
   end
   
   def create 
-    @project = Project.new(project_params)
+   @project = Project.new(project_params)
     if @project.save
       flash[:success] = "Project has been created"
       redirect_to projects_path
@@ -49,5 +50,9 @@ class ProjectsController < ApplicationController
   private
     def project_params
       params.require(:project).permit(:name,:description)
+    end
+    
+    def set_project
+     @project = Project.find(params[:id])
     end
 end

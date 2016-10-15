@@ -12,7 +12,7 @@ RSpec.feature "Editing Project" do
         click_link "Edit Project"
         
         fill_in "Name" , with: "Update project"
-        fill_in "Simple Description" , with: "Update description"
+        fill_in "Simple description" , with: "Update description"
         click_button "Update Project"
     
         expect(page).to have_content("Project has been updated")

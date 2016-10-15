@@ -1,29 +1,3 @@
-<h1> Editting Project</h1>
+<h1> Edit Project</h1>
 
-<%= bootstrap_form_for(@project) do |f| %>
-
-  <%if @project.errors.any? %>
-    <div class="panel panel-danger col-md-offset-1"> 
-      <div class="panel-heading">
-            <h2 class="panel-title">
-              <%= pluralize(@project.errors.count,"error")%>
-              prohibited this project from being saved:
-            </h2>
-          
-          <div class="panel-body">
-              <ul>
-              <% @project.errors.full_messages.each do |msg|%>
-                <li>
-                  <%= msg %>
-                </li>
-                <% end %>
-              </ul>
-          </div>
-      </div>
-    </div>  
-  <%end%>
-
-  <%= f.text_field :name,label: "Name" %>
-  <%= f.text_area :description , label: "Simple Description" %>
-  <%= f.submit "Update Project"  , class:"btn btn-primary btn-block"%>
-<% end %>
+<%= render 'form'%>
