@@ -1,6 +1,6 @@
 <div class="container-customized">
       <% flash.each do |name,msg| %>
-          <% if name != "notice"%>
+          <% if name != "notice" && name != "alert" %>
               <div class='alert alert-<%= "#{name}" %> '>
           <%else%>
               <div class='alert alert-warning'>
