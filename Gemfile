@@ -4,6 +4,10 @@ source 'https://rubygems.org'
 #Minhas Gems
 gem 'bootstrap-sass'
 gem 'bootstrap_form'
+#Utilizando já o postgres em development
+# Use sqlite3 as the database for Active Record
+#gem 'sqlite3'
+gem 'pg'
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.5'
@@ -17,10 +21,8 @@ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
-#Utilizando já o postgres em development
-# Use sqlite3 as the database for Active Record
-#gem 'sqlite3'
-gem 'pg'
+
+
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
