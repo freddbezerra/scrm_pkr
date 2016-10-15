@@ -13,7 +13,7 @@ RSpec.feature "Editing Project" do
         
         fill_in "Name" , with: "Update project"
         fill_in "Simple description" , with: "Update description"
-        click_button "Update Project"
+        click_button "Edit project"
     
         expect(page).to have_content("Project has been updated")
         expect(page.current_path).to eq(project_path(@project))
@@ -28,8 +28,8 @@ RSpec.feature "Editing Project" do
         click_link "Edit Project"
         
         fill_in "Name" , with: ""
-        fill_in "Simple Description" , with: "Update description"
-        click_button "Update Project"
+        fill_in "Simple description" , with: "Update description"
+        click_button "Edit project"
     
         expect(page).to have_content("Project has not been updated")
         expect(page.current_path).to eq(project_path(@project))

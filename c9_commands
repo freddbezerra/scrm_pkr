@@ -28,3 +28,10 @@ Story_rating
     -user_story_id
     -user_id
     -rating
+    
+    
+    Padrão de criação -
+    1.Criar um branch
+        git checkout -b <new feature>
+    2.Criar Arquivo 
+        spec/features/<new feature>
