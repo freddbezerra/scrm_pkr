@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 #Minhas Gems
 gem 'bootstrap-sass'
 gem 'bootstrap_form'
+gem 'devise','~>3.5.1'
 #Utilizando já o postgres em development
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
