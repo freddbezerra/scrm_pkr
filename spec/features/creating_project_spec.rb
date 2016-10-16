@@ -2,6 +2,11 @@ require 'rails_helper'
 
 RSpec.feature "Creating Projects" do
 
+    before do
+        @user = User.create!(email: "example@ex.com" , password: "password")
+        login_as(@user)
+    end
+
     scenario "A user creates a new project" do
         visit "/" #root
         
@@ -13,6 +18,7 @@ RSpec.feature "Creating Projects" do
         
         expect(page).to have_content("Project has been created")
         expect(page.current_path).to eq(projects_path)
+        expect(page).to have_content("Owner: #{@user.email}")
         
     end
     

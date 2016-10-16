@@ -11,6 +11,11 @@
         <div class="project-description">
             <%= truncate(project.description,length: 500) %>
         </div>
+        <div class="author">
+            <% if project.user%>
+                <small>Owner: <%= project.user.email %> </small>
+            <%end%>
+        </div>
     </div>
 
 <% end %>

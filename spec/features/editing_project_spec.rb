@@ -2,7 +2,10 @@ require "rails_helper"
 RSpec.feature "Editing Project" do
     
     before do
-        @project = Project.create(name: "First Project" ,description: "Simple description of project")
+         @user = User.create!(email: "example@ex.com" , password: "password")
+        login_as(@user)
+        @project = Project.create(name: "First Project" ,
+        description: "Simple description of project",user: @user)
     end
     
     scenario "A user update a project" do

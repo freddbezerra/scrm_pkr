@@ -2,7 +2,9 @@ require "rails_helper"
 RSpec.feature "deleting Project" do
 
     before do
-        @project = Project.create(name: "Name of project" , description: "Description of project")
+        @user = User.create!(email: "example@ex.com" , password: "password")
+        login_as(@user)
+        @project = Project.create(name: "Name of project" , description: "Description of project",user: @user)
     end
     
     scenario "User delete a project" do
