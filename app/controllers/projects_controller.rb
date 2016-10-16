@@ -14,28 +14,39 @@ class ProjectsController < ApplicationController
   end
   
   def edit
+    if @project.user != current_user
+      flash[:danger] = "You can only edit your own project"
+      redirect_to root_path
+    end
   end
   
   def update
-  
-    if @project.update(project_params)
-        flash[:success] = "Project has been updated"
-        redirect_to @project
-    else
-      flash.now[:danger] = "Project has not been updated"
-      render :edit
-    end
-        
+     if @project.user != current_user
+        flash[:danger] =  "You can only edit your own project"
+        redirect_to root_path
+     else
+        if @project.update(project_params)
+            flash[:success] = "Project has been updated"
+            redirect_to @project
+        else
+          flash.now[:danger] = "Project has not been updated"
+          render :edit
+        end
+     end  
   end
   
   def destroy
-  
-    if @project.destroy
-      flash[:sucess] = "Project has been deleted"
-      redirect_to  projects_path
+    if @project.user != current_user
+          flash[:danger] =  "You can only delete your own project"
+          redirect_to root_path
     else
-      flash.now[:danger] = "Project has not been deleted"
-      render :delete
+        if @project.destroy
+          flash[:sucess] = "Project has been deleted"
+          redirect_to  projects_path
+        else
+          flash.now[:danger] = "Project has not been deleted"
+          render :delete
+        end
     end
   end
   
