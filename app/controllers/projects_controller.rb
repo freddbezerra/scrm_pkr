@@ -1,6 +1,7 @@
 class ProjectsController < ApplicationController
   
   before_filter :set_project, only:[:show,:edit,:update,:destroy]
+  before_filter :authenticate_user! , only:[:index]
   
   def index
     @projects = Project.all
